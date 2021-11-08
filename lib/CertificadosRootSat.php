@@ -2,6 +2,8 @@
 
 namespace Webneex\CertificadosRootSat;
 
+use phpseclib3\File\X509;
+
 class CertificadosRootSat {
 
     const PRODUCCION = 1;
@@ -10,7 +12,7 @@ class CertificadosRootSat {
     public static function validar($env, $cer) {
         $list_valid = [];
 
-        $x509 = new \phpseclib\File\X509;
+        $x509 = new X509();
 
         $dh = opendir($base_dir = __DIR__ . '/../' . ($env === static::PRODUCCION ? 'produccion' : 'pruebas') . '/');
         while ($file = readdir($dh)) {

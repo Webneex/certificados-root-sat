@@ -1,8 +1,9 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use Webneex\CertificadosRootSat\CertificadosRootSat;
 
-final class ValidaTest extends PHPUnit_Framework_TestCase {
+final class ValidaTest extends TestCase {
 
     public function testValidaPruebas() {
 
